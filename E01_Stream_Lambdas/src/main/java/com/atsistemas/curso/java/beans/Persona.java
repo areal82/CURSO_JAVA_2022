@@ -16,6 +16,7 @@ public class Persona {
 	String apellido;
 	String correo;
 	String genero;
+	String profesion;
 	Integer edad;
 	Persona tutor;
 	
@@ -35,6 +36,7 @@ public class Persona {
 		genero = "";
 		edad = Integer.valueOf(0);
 		tutor = new Persona();
+		profesion = "";
 	}
 	
 	
