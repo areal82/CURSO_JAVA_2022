@@ -11,7 +11,6 @@ public class CursoJava {
 
 	public static void main(String[] args) {
 		
-		// Comment added from Github
 		List<String> names = List.of("John", "John", "Mariam", "Alex", "Mohammado", "Mohammado", "Vincent", "Alex",
 				"Alex");
 
