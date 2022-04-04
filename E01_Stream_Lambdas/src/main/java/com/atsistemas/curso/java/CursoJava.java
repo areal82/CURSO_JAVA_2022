@@ -11,10 +11,13 @@ public class CursoJava {
 
 	public static void main(String[] args) {
 		
+		
+		// Hola David, te escribo desde GitHub
+		
 		List<String> names = List.of("John", "John", "Mariam", "Alex", "Mohammado", "Mohammado", "Vincent", "Alex",
 				"Alex");
 
-		System.out.println("FOR CLÁSICO");
+		System.out.println("FOR CLÁSICO Excel");
 		System.out.println("-------------");
 		for (int i = 0; i < names.size(); i++) {
 			System.out.println(names.get(i));
