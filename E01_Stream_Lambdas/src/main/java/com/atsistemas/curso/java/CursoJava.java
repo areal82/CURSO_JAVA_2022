@@ -11,13 +11,11 @@ public class CursoJava {
 
 	public static void main(String[] args) {
 		
-		
-		// Hola David, te escribo desde GitHub
-		
-		List<String> names = List.of("John", "John", "Mariam", "Alex", "Mohammado", "Mohammado", "Vincent", "Alex",
+		List<String> names = List.of("John", "John", "Mariam", "Alex", "Marlon", "Marlon", "Vincent", "Alex",
 				"Alex");
 
-		System.out.println("FOR CL√ÅSICO Excel");
+		System.out.println("-------------");
+		System.out.println("FOR CL¡SICO");
 		System.out.println("-------------");
 		for (int i = 0; i < names.size(); i++) {
 			System.out.println(names.get(i));
@@ -33,20 +31,18 @@ public class CursoJava {
 		System.out.println();
 		System.out.println();
 		
-		System.out.println("Expresi√≥n lambda sin referencias");
+		System.out.println("ExpresiÛn lambda sin referencias");
 		System.out.println("-----------------------------------");
-		
 		names.forEach((String name) -> System.out.println(name));
-		names.forEach(name -> System.out.println(name));
 		
 		System.out.println("########################");
 		System.out.println();
 		System.out.println();
 
 		
-		System.out.println("Expresi√≥n lambda con referencia a m√©todo est√°tico");
+		System.out.println("ExpresiÛn lambda con referencia a mÈtodo est·tico");
 		System.out.println("-------------------------------------------------");
-		
+
 		names.forEach(System.out::println);
 		
 		System.out.println("########################");
@@ -162,7 +158,7 @@ public class CursoJava {
 		
 		System.out.println("COLLECT MAP -> Joining names");
 		System.out.println("-------------------");
-		// Eliminar duplicados, cambiar la cadena a may√∫sculas y vincularlas con una coma
+		// Eliminar duplicados, cambiar la cadena a may˙sculas y vincularlas con una coma
 		String collectJoin = names.stream().distinct().map(x -> x.toUpperCase()).collect(Collectors.joining(", "));
 		System.out.println(collectJoin);
 		

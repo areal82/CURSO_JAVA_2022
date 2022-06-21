@@ -17,13 +17,13 @@ public class Ejemplos {
 	public static void main(String[] args) {
 
 //		runnableExample();
-//
+
 //		handleEvent();
 //
-		filterWithPredicate();
-		
+//		filterWithPredicate();
+//		
 		addPredicateToLambda();
-		
+//		
 //		summaryStatistics();
 	}
 
@@ -83,6 +83,7 @@ public class Ejemplos {
 		// Obtener el número, mínimo, máximo, suma y promedio de números
 		List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
 		IntSummaryStatistics stats = primes.stream().mapToInt((x) -> x).summaryStatistics();
+		// IntSummaryStatistics stats = primes.stream().mapToInt(x -> x).summaryStatistics();
 		log.info("Highest prime number in List : " + stats.getMax());
 		System.out.println("Lowest prime number in List : " + stats.getMin());
 		System.out.println("Sum of all prime numbers : " + stats.getSum());
@@ -92,13 +93,16 @@ public class Ejemplos {
 	
 	private static void addPredicateToLambda() {
 		// Incluso puede usar y (), o () funciones lógicas para combinar Predicate,
-		// Por ejemplo, para encontrar todos los nombres que comienzan con J y tienen cuatro letras de longitud, puede combinar dos Predicados y pasar
+		// Por ejemplo, para encontrar todos los nombres que comienzan con J y
+		// tienen cuatro letras de longitud, puede combinar dos Predicados y pasar
 		Predicate<String> startsWithJ = (n) -> n.startsWith("J");
 		Predicate<String> fourLetterLong = (n) -> n.length() == 4;
 		List<String> names = List.of("John", "Mariam", "Alex", "Mohammado", "Mohammado", "Vincent", "Alex",
 				"Alex");
 		names.stream()
-		    .filter(startsWithJ.and(fourLetterLong))
+			.filter(startsWithJ.and(fourLetterLong))    
+//			.filter(startsWithJ)
+//		    .filter(fourLetterLong)
 		    .forEach((n) -> System.out.print("nName, which starts with 'J' and four letter long is : " + n));
 	}
 

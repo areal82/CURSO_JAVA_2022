@@ -99,7 +99,7 @@ public class EjemploDepartamento {
 		
 		departamentos.stream()
 			//.filter(d -> Objects.nonNull(d.getResponsable()))
-			.filter((Departamento d) -> Objects.nonNull(d.getResponsable()))
+			.filter(d -> Objects.nonNull(d.getResponsable()))
 			.filter((Departamento d) -> Objects.nonNull(d.getResponsable().getTutor()))
 			.findFirst()
 			.map(departamento -> departamento.getResponsable())
