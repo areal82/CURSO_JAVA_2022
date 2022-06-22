@@ -13,6 +13,7 @@ public class CursoJava {
 
 	public static void main(String[] args) {
 		
+		// Comentario añadido desde eclipse antes del PUSH 
 		
 		MavenBean test = new MavenBean("Pepe");
 		test.getNombre();
