@@ -7,9 +7,16 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import com.atsistemas.curso.MavenBean;
+
 public class CursoJava {
 
 	public static void main(String[] args) {
+		
+		
+//		MavenBean test = new MavenBean("Pepe");
+//		test.getNombre();
+		
 		
 		List<String> names = List.of("John", "John", "Mariam", "Alex", "Marlon", "Marlon", "Vincent", "Alex",
 				"Alex");
