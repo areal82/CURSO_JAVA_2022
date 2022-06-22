@@ -14,8 +14,8 @@ public class CursoJava {
 	public static void main(String[] args) {
 		
 		
-//		MavenBean test = new MavenBean("Pepe");
-//		test.getNombre();
+		MavenBean test = new MavenBean("Pepe");
+		test.getNombre();
 		
 		
 		List<String> names = List.of("John", "John", "Mariam", "Alex", "Marlon", "Marlon", "Vincent", "Alex",
