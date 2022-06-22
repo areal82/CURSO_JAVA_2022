@@ -12,7 +12,7 @@ public class CursoJava {
 	public static void main(String[] args) {
 		
 		
-		// Hola David, te escribo desde GitHub
+		// Quiero subir esto a la rama MASTER
 		
 		List<String> names = List.of("John", "John", "Mariam", "Alex", "Mohammado", "Mohammado", "Vincent", "Alex",
 				"Alex");
