@@ -3,10 +3,11 @@ package com.atsistemas.curso.ejemplo4.model;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Todo implements ITodo {
+public class Todo4 implements ITodo4 {
 
 	public final long id;
 
@@ -18,16 +19,16 @@ public class Todo implements ITodo {
 
 	private LocalDate dueDate;
 
-	public Todo() {
+	public Todo4() {
 		this(-1);
 	}
 
-	public Todo(long i) {
+	public Todo4(long i) {
 		this(i, "");
 	}
 
 	@Autowired
-	public Todo(long i, String summary) {
+	public Todo4(long i, @Qualifier("summary") String summary) {
 		this.id = i;
 		this.summary = summary;
 	}
@@ -53,6 +54,7 @@ public class Todo implements ITodo {
 	}
 
 	@Autowired
+	@Qualifier("description")
 	@Override
 	public void setDescription(String description) {
 		this.description = description;
@@ -96,7 +98,7 @@ public class Todo implements ITodo {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Todo other = (Todo) obj;
+		Todo4 other = (Todo4) obj;
 		if (id != other.id)
 			return false;
 		return true;
@@ -108,8 +110,8 @@ public class Todo implements ITodo {
 	}
 
 	@Override
-	public Todo copy() {
-		Todo todo = new Todo(id, summary);
+	public Todo4 copy() {
+		Todo4 todo = new Todo4(id, summary);
 		todo.setDone(isDone());
 		todo.setDueDate(getDueDate());
 		todo.setDescription(getDescription());

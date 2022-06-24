@@ -1,34 +1,30 @@
-package com.atsistemas.curso.ejemplo5.model;
+package com.atsistemas.curso.ejemplo3.model;
 
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Todo implements ITodo {
+public class Todo3 implements ITodo3 {
 
 	public final long id;
-
 	private String summary;
-
-	private String description;
 
 	private Boolean done;
 
 	private LocalDate dueDate;
 
-	public Todo() {
+	public Todo3() {
 		this(-1);
 	}
 
-	public Todo(long i) {
+	public Todo3(long i) {
 		this(i, "");
 	}
 
 	@Autowired
-	public Todo(long i, @Qualifier("summary") String summary) {
+	public Todo3(long i, String summary) {
 		this.id = i;
 		this.summary = summary;
 	}
@@ -49,18 +45,6 @@ public class Todo implements ITodo {
 	}
 
 	@Override
-	public String getDescription() {
-		return description;
-	}
-
-	@Autowired
-	@Qualifier("description")
-	@Override
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	@Override
 	public boolean isDone() {
 		return done;
 	}
@@ -75,7 +59,7 @@ public class Todo implements ITodo {
 	public LocalDate getDueDate() {
 		return dueDate;
 	}
-
+	
 	@Autowired
 	@Override
 	public void setDueDate(LocalDate dueDate) {
@@ -98,7 +82,7 @@ public class Todo implements ITodo {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Todo other = (Todo) obj;
+		Todo3 other = (Todo3) obj;
 		if (id != other.id)
 			return false;
 		return true;
@@ -106,15 +90,14 @@ public class Todo implements ITodo {
 
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + ", summary=" + summary + ", description=" + description + "]";
+		return "Todo [id=" + id + ", summary=" + summary + "]";
 	}
 
 	@Override
-	public Todo copy() {
-		Todo todo = new Todo(id, summary);
+	public Todo3 copy() {
+		Todo3 todo = new Todo3(id, summary);
 		todo.setDone(isDone());
 		todo.setDueDate(getDueDate());
-		todo.setDescription(getDescription());
 
 		return todo;
 	}

@@ -2,7 +2,7 @@ package com.atsistemas.curso.ejemplo3.model;
 
 import java.time.LocalDate;
 
-public interface ITodo {
+public interface ITodo3 {
 
 	long getId();
 
@@ -18,6 +18,6 @@ public interface ITodo {
 
 	void setDueDate(LocalDate dueDate);
 
-	ITodo copy();
+	ITodo3 copy();
 
 }

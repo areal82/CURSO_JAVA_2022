@@ -2,6 +2,9 @@ package com.atsistemas.curso.ejemplo1.model;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Todo implements ITodo {
 
 	public final long id;

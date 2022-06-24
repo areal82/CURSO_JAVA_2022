@@ -1,4 +1,4 @@
-package com.atsistemas.curso.ejemplo5.config;
+package com.atsistemas.curso.ejemplo4.config;
 
 import java.time.LocalDate;
 
@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = { "com.atsistemas.curso.ejemplo5" })
-public class Config {
+@ComponentScan(basePackages = { "com.atsistemas.curso.ejemplo4" })
+public class Config4 {
 
 	@Bean
 	public Long getId() {
