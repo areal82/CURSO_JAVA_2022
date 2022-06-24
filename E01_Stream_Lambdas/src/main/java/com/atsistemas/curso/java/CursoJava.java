@@ -12,6 +12,9 @@ public class CursoJava {
 	public static void main(String[] args) {
 		
 		
+		AccesoADatos ad = new AccesoADatos();
+		System.out.println(ad.temp());
+		
 		// Quiero subir esto a la rama MASTER
 		
 		List<String> names = List.of("John", "John", "Mariam", "Alex", "Mohammado", "Mohammado", "Vincent", "Alex",
