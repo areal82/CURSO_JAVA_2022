@@ -12,4 +12,9 @@ public class HelloServiceImpl implements HelloService {
 		return "Hello World!";
 	}
 
+	@Override
+	public String sayGoodBye() {
+		return "Good Bye World!";
+	}
+
 }

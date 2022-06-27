@@ -24,7 +24,7 @@ public class GreetingController {
 	private AtomicLong counter;
 
 	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World", required = false) String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 	
@@ -35,14 +35,13 @@ public class GreetingController {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<HttpStatus> createGreeting(
-	  @RequestBody Greeting newGreeting) {
+	public ResponseEntity<HttpStatus> createGreeting(@RequestBody Greeting newGreeting) {
 	    return ResponseEntity.ok(HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/createWithRS", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Greeting> createGreetingWithRS(
 	  @RequestBody Greeting newGreeting) {
-	    return ResponseEntity.ok(newGreeting);
+		return ResponseEntity.ok(newGreeting);
 	}
 }
