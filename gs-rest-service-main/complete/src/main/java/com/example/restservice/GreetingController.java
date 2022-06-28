@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,7 @@ public class GreetingController {
 	private AtomicLong counter;
 
 	@GetMapping("/greeting")
+	// @RequestMapping(method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World", required = false) String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
@@ -40,6 +43,7 @@ public class GreetingController {
 	}
 	
 	@PostMapping(value = "/createWithRS", produces = MediaType.APPLICATION_JSON_VALUE)
+	// @RequestMapping(method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Greeting> createGreetingWithRS(
 	  @RequestBody Greeting newGreeting) {
 		return ResponseEntity.ok(newGreeting);
