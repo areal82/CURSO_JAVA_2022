@@ -15,7 +15,9 @@ public class Pelicula {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Integer id;
-	@Column(name = "TITULO", length = 100)
+//	@Id
+//	private PeliculaKey id;
+	@Column(name = "TITLE", length = 100)
 	private String titulo;
 	@Column(name = "DIRECTOR", length = 50)
 	private String director;

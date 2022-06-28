@@ -29,11 +29,6 @@ public class HelloController {
 		return "hello";
 	}
 	
-	
-	
-	
-	
-	
 	@GetMapping("/greeting")
 	public String greeting(@RequestParam(name="name", 
 		required=true, defaultValue="World") String name,

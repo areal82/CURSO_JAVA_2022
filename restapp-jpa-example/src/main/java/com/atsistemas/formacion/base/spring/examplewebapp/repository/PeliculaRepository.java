@@ -16,6 +16,7 @@ public interface PeliculaRepository {
 	Pelicula update(Pelicula pelicula);
 
 	void delete(Integer pelicula);
+	void delete(Pelicula pelicula);
 
 	List<Pelicula> findByGenero(String genero);
 
