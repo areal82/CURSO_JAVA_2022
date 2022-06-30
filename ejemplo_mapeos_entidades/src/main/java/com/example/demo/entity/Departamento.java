@@ -29,8 +29,7 @@ public class Departamento implements Serializable {
 	private String nombre;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@Column(name = "responsable_id", nullable = false)
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "responsable_id")
 	private Persona responsable;
 	
 	@OneToMany()

@@ -11,6 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Persona")
@@ -24,19 +29,27 @@ public class Persona implements Serializable {
 	private Integer id;
 	
 	@Column(name = "nombre", nullable = false)
+	@NotNull(message = "El campo nombre no puede ser nulo")
 	private String nombre;
 	
 	@Column(name = "apellido", nullable = true)
+	@Size(min = 1, max = 10, message = "El apellido debe tener de 1 a 10 caracteres")
 	private String apellido;
 	
-	@Column(name = "departamento_id", nullable = false)
+	@Column(name = "departamento_id", nullable = false, insertable = true, updatable = true)
 	private Integer departamentoId;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@Column(name = "departamento_id", nullable = false)
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "departamento_id", insertable = false, updatable = false)
 	private Departamento departamento;
-
+	
+	@Min(value = 18, message = "La edad no debe ser menor a 18 años")
+    @Max(value = 150, message = "La edad no debe ser mayor de 65 años")
+    private Integer edad;
+	
+	@Email(message = "Email should be valid")
+    private String email;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -75,5 +88,21 @@ public class Persona implements Serializable {
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
+	}
+
+	public Integer getEdad() {
+		return edad;
+	}
+
+	public void setEdad(Integer edad) {
+		this.edad = edad;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
