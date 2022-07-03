@@ -44,7 +44,7 @@ public class Persona implements Serializable {
 	private Departamento departamento;
 	
 	@Min(value = 18, message = "La edad no debe ser menor a 18 años")
-    @Max(value = 150, message = "La edad no debe ser mayor de 65 años")
+    @Max(value = 65, message = "La edad no debe ser mayor de 65 años")
     private Integer edad;
 	
 	@Email(message = "Email should be valid")
